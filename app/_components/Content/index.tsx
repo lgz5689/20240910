@@ -1,5 +1,6 @@
 "use client";
 
+import './polyfill'
 import { useState } from "react";
 import { pdfjs, Document } from "react-pdf";
 import type { PDFDocumentProxy } from "pdfjs-dist";
@@ -13,10 +14,7 @@ import Tools from "./Tools";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
-  import.meta.url
-).toString();
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 const options = {
   cMapUrl: "/cmaps/",
