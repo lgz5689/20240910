@@ -1,5 +1,6 @@
 "use client";
 
+import './polyfill'
 import { useState } from "react";
 import { pdfjs, Document } from "react-pdf";
 import type { PDFDocumentProxy } from "pdfjs-dist";
